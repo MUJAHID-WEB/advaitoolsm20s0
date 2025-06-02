@@ -2,7 +2,7 @@
   padding: 80px 32px;
 
   @include desktop-small {
-    padding: 64px 16px;
+    padding: 24px 20px;
   }
 
   // #grav-login {
@@ -12,11 +12,11 @@
 
 
 .login {
-  background: var(--color-black);
+  // background: var(--color-black);
   padding: 80px 0;
 
   @include desktop-small {
-    padding: 64px 0;
+    padding: 24px 0;
   }
 
   // @include mobile {
@@ -112,12 +112,12 @@
     max-width: 639px;
     width: 100%;
     margin: 0 auto;
-    background-color: var(--bg-body);
+    background-color: var(--color-gray);
     border-radius: 18px;
     // box-shadow: 0px 4px 4px 0px rgba(51, 51, 51, 0.04), 0px 4px 16px 0px rgba(51, 51, 51, 0.08);
 
     @include mobile {
-      padding: 40px 12px;
+      padding: 44px 16px;
     }
 
     .form-field {
@@ -153,18 +153,9 @@
       text-align: center;
 
       .button {
-        display: inline-block;
-        // background: var(--color-white);
-        background-image: none;
-        --animate-duration: 1s;
-        --animate-repeat: 1;
-        --animate-delay: 0.5s;
-        transition: all .2s ease-in-out;
+
         padding: 14px 20px;
-        // border-radius: var(--border-radus);
-        @include typography(base);
-        color: var(--color-global-btn);
-        font-weight: 600;
+
 
         &:hover {
           transform: translateY(-.15rem);
@@ -191,15 +182,9 @@
 
       .primary {
         width: 100%;
-        background: var(--color-secondary);
-        color: var(--color-black);
-        border-radius: 8px;
-        box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+ 
         @include typography(text-xl, semibold);
 
-        @include desktop-small {
-          @include typography(text-md, semibold);
-        }
       }
 
       .secondary {
@@ -209,6 +194,7 @@
         background: none;
         color: var(--color-white) !important;
         text-decoration: none;
+        border: none;
         padding: 0;
         @include typography(text-sm, semibold);
 
