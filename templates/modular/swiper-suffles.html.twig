@@ -1,0 +1,108 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set contents = page.header.contents %}
+
+{% block render_block %}
+
+<div class="swiper-suffle-section {{ module.offer_parent_class }}">
+	<div class="container">
+
+		<div class="swiper-suffle-wrapper">
+
+			<div class="offer-wrapper">
+
+				<div class="offer-content"> 
+					<h1 class="offer-title">
+						{{ contents.title.translatable|striptags('<span>')|raw }}
+					</h1>
+				</div>
+
+				<div class="offer-image" >
+
+					<swiper-container class="swiper-card" effect="cards" grab-cursor="true">
+
+						{% for item in contents.images %}
+						<swiper-slide>
+						
+							<img class="slider-img" width="100%" src="{{ page.media[item.img].url }}" alt="Swiper Image"/>
+
+							<div class="swiper-overlay">
+								<h4 class="title">{{ item.title.translatable }}</h4>
+								<p class="brief">{{ item.brief.translatable }}</p>
+								
+							</div>
+
+						</swiper-slide>
+						{% endfor %}
+
+						<div class="navigations-custom-suffle">						
+
+							<div class="swiper-button-next">
+								<img src="{{ url('theme://images/arrow-right.svg') }}" />
+							</div>
+
+							<div class="swiper-button-prev">
+								<img src="{{ url('theme://images/arrow-left.svg') }}" />
+							</div>						
+
+						</div>
+
+							
+
+					</swiper-container>
+
+					<span>
+					
+					<img src="{{ url('theme://images/hand-animation.gif') }}" />
+					
+					</span>
+				</div>
+
+				
+			</div>
+		
+		</div>
+	</div>
+</div>
+
+  <script>
+		var swiper = new Swiper(".swiper-card", {
+			slidesPerView: 3,
+			spaceBetween: 30,
+			autoplay: false,
+			loop: true,
+			centeredSlides: true,
+			rtl: true,
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true, // Allows clicking on dots to navigate
+			},
+
+			  breakpoints: {
+				// when window width is >= 320px (example mobile breakpoint)
+				320: {
+				slidesPerView: 1,
+				},
+				// when window width is >= 480px (another example mobile breakpoint)
+				480: {
+				slidesPerView: 1,
+				},
+				// when window width is >= 768px (example tablet breakpoint)
+				768: {
+				slidesPerView: 2, // Show 2 slides on tablets and larger
+				},
+				// when window width is >= 992px (example desktop breakpoint)
+				992: {
+				slidesPerView: 3, // Show 3 slides on desktops and larger
+				},
+			},
+
+
+		});
+  	</script>
+{% endblock %}
