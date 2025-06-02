@@ -10,11 +10,11 @@
   // display: flex;
   // justify-content: center;
   // z-index: 1; 
-  background: var(--color-black);
+  background: var(--bg-body);
   padding: 80px 1rem;
 
   @include desktop-small{
-    padding: 64px 16px;
+    padding: 24px 20px;
   }
 
   // &::before {
@@ -37,17 +37,21 @@
 
   .cm_forms {
     //position: absolute;
-    top: calc(50% - 600px);
+    // top: calc(50% - 600px);
     max-width: 600px;
     width: 100%;
-    padding: 40px;
+    padding: 44px;
     // padding-bottom: 75px;
     // padding-top: 75px;
-    background: var(--bg-body);
-    border-radius: 24px;
+    background: var(--color-gray);
+    border-radius: 18px;
     margin: 0 auto;
     margin-top: 0;
     // box-shadow: 0px 4px 16px 0px #33333314, 0px 4px 4px 0px #3333330A;
+
+    @include desktop-small {
+      padding: 44px 16px;
+    }
 
     label {
       @include typography(text-md, semibold);
@@ -77,10 +81,7 @@
       box-shadow: none;
     }
 
-    @include desktop-small {
-      padding: 40px 20px;
-      border-radius: 20px;
-    }
+  
 
     // @media (max-width: 630px) {
     //   margin: 0 1rem;
@@ -95,10 +96,6 @@
       .button {
         display: block;
         width: 100%;
-        background: var(--color-secondary);
-        color:var(--color-black);
-        padding: 16px 18px;
-
         @include typography (text-xl, semibold);
 
       }

@@ -1,6 +1,6 @@
 
 .page-orders .prose.max-w-none.pt-12 {
-  background-color: var(--color-black);
+  background-color: var(--bg-body);
 }
 
 .orders-table-wrapper {
@@ -100,7 +100,7 @@
     }
 
     tbody td {
-      border-top: 1px solid #EAECF0;
+      // border-top: 1px solid #EAECF0;
       border-right: 1px solid #EAECF0;
       @include typography(text-sm, medium);
       background-color: var(--bg-body);
@@ -114,7 +114,17 @@
       color: #027A48;
       display: list-item;
       list-style-position: inside;
+      background: #ECFDF3;
+      margin: 16px;
+      padding: 2px 8px;
+      border-radius: 16px;
+      width: fit-content;
     }
+
+    td:nth-of-type(6){
+      border-left: 1px solid #EAECF0;
+    }
+
     td:last-child {
       text-align: center;
     }
@@ -122,7 +132,7 @@
     td a.btn {
       vertical-align: middle;
       text-decoration: none;
-      background: var(--color-primary);
+      background: var(--color-white);
       -webkit-background-clip: text;
       -webkit-text-fill-color: rgba(0, 0, 0, 0);
 
@@ -130,7 +140,7 @@
         vertical-align: middle;
         margin-right: 12px;
         margin-top: -1px;
-        stroke: var(--color-primary);
+        stroke: var(--color-white);
       }
     }
   }
