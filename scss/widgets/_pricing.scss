@@ -153,7 +153,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     gap: 51px;
     flex-wrap: wrap;
     background: var(--pricing-bg);
@@ -173,13 +173,11 @@
       max-width: 985px;
       width: 100%;
       // align-self: stretch;
-      border-radius: 20px;
+      border-radius: 23px;
+      background: #000;
       // border: 1px solid var(--border-color);
-      background: var(--color-white);
-      // border: 1px solid var(--color-tertiary);
-      border: 1px solid #EDEDED;
       // opacity: 0;
-      // padding-bottom: 30px;
+      padding: 5px;
       @include desktop-small {
         // max-width: 600px;
         width: 100%;
@@ -195,11 +193,14 @@
 
       .pricing-content {
         display: flex;
-        // flex-direction: column;
+        justify-content: space-between;
         align-self: stretch;
         position: relative;
         height: 100%;
-        // padding: 20px 0;
+        border-radius: 23px;
+        padding: 20px 20px 20px 76px;
+        border: 1px solid #424242;
+        background: var(--color-secondary);
 
         // @include desktop-small{
         //   padding:  22px 22px 0 22px;
@@ -254,9 +255,10 @@
           gap: 0;
           align-items: end;
           // border-bottom: 2px solid var(--color-tertiary);
-          // background-color: var(--color-tertiary);
+          background-color: #E4FFED;
           padding: 30px;
-          // border-radius: 0 0 24px 24px;
+          border-radius: 22px;
+          width: 40%;
 
           .package-top-section-img{
             display: none;
@@ -272,7 +274,7 @@
           & > .price {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
             gap: 11px;
             align-self: stretch;
             color: var(--color-black);
@@ -285,9 +287,9 @@
             .package-title{
               display: flex;
               gap: 14px;
-              align-items: center;
-              justify-content: center;
-              text-align: center;
+              align-items: flex-start;
+              justify-content: flex-start;
+              text-align: left;
               width: 100%;
 
               @include mobile{
@@ -321,9 +323,10 @@
               display: flex;
               flex-direction: column;
               // justify-content: space-between;
-              align-items: center;
-              align-self: stretch;
-              text-align: center;
+              align-items: flex-start;
+              // align-self: stretch;
+              align-items: flex-start;
+              text-align: left;
               // flex-wrap: wrap;
               gap: 10px !important;
 
@@ -419,6 +422,7 @@
           padding: 30px 30px 0;
           align-self: stretch;
           height: 100% !important;
+          width: 60%;
           // border-radius: 24px 24px 0 0;
 
           // background-color: var(--color-secondary);
@@ -449,9 +453,9 @@
         .pricing-btn {
           padding: 12px 40px;
           border-radius: 8px;
-          background-color: var(--color-secondary);
+          background: var(--color-primary);
           // border: 1px solid var(--color-black);
-          color: var(--color-black);
+          color: var(--color-white);
           @include typography(text-lg, bold);
           text-align: center;
           margin-top: 40px;
@@ -492,36 +496,42 @@
 
       &:nth-child(3){
 
-        background: var(--bg-body);
+        background: #000;
         color: var(--color-white);
-        border: 1px solid #EDEDED;
+
+        .pricing-content {
+          .package-top-section {
+            background: #E8F1FF;
+          }
+        }
+
         .pricing-content .recommended-tag-parent{
           display: none;
-         }
+        }
 
         .pricing-content .package-top-section > .price {
           .pricing-group {
 
             .text-sm{
-              color: var(--color-white);
+              color: var(--color-black);
             }
             .billed-section {
-              color: var(--color-white);
+              color: var(--color-black);
             }
             .billed-section .trial-days,
             .billed-section .trial{
-              color: var(--color-white);
+              color: var(--color-black);
             }
             
             .pricing-wrap .price{
-              color: var(--color-white);
+              color: var(--color-black);
             }
           }
           .type{
             // color: var(--color-primary);
             .type-wrap {
               @include typography(display-xs, semibold);
-              color: var(--color-white);
+              color: var(--color-black);
             }
           }
 
