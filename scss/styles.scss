@@ -46,7 +46,7 @@
 @import 'pages/unsubscribe';
 @import 'pages/contact-us';
 @import 'pages/about';
-@import 'pages/change-password';
+// @import 'pages/change-password';
 
 @import 'forms/change-password';
 @import 'forms/cancel-membership';
@@ -84,7 +84,8 @@
 
 	img {
 		width: 100%;
-		&:hover{
+
+		&:hover {
 			transform: scale(1.02);
 		}
 
@@ -165,9 +166,11 @@
 	margin: 0 auto;
 	padding: 2.5rem 2rem;
 	overflow-wrap: anywhere;
-  @include desktop-small{
-    @include padding(padding-sm)
-  }
+
+	@include desktop-small {
+		@include padding(padding-sm)
+	}
+
 	.dashboard-content {
 		width: 100%;
 		min-height: 1022px;
@@ -178,6 +181,7 @@
 .theme-shadow {
 	box-shadow: 20px 20px 0px 0px var(--color-primary);
 	border-radius: var(--border-radius);
+
 	@include desktop-small {
 		box-shadow: 10px 10px 0px 0px var(--color-primary);
 		border-radius: var(--border-radius);
@@ -253,9 +257,10 @@
 }
 
 //Background Color
-.bg-color{
+.bg-color {
 	background: var(--bg-body) !important;
 }
+
 .bg-white {
 	background: var(--color-white) !important;
 }
@@ -291,7 +296,8 @@
 .bg-tertiary {
 	background: var(--color-tertiary) !important;
 }
-.bg-transparent{
+
+.bg-transparent {
 	background: transparent;
 }
 
@@ -375,21 +381,26 @@
 	flex: 16% !important;
 }
 
-.dFlex{
+.dFlex {
 	display: flex !important;
 }
 
-ol, ul {
-	&:not(.breadcrumb){
-        margin-left: 1rem;
+ol {
+	&:not(.breadcrumb) {
+		margin-left: 1rem;
 
-
-        @include mobile{
-            margin-left: 0 !important;
-        }
-    }
-
+		@include mobile {
+			margin-left: 0;
+		}
+	}
 }
+
+ul {
+	&:not(.breadcrumb) {
+		margin-left: 1rem;
+	}
+}
+
 
 .section-title {
 	background-image: url(../../images/title-shap.png);
@@ -412,10 +423,10 @@ ol, ul {
 // }
 
 
-.page-dashboard .main-container{
+.page-dashboard .main-container {
 	margin-top: 100px;
 
-	@include desktop-small{
+	@include desktop-small {
 		margin-top: 80px;
 	}
 }

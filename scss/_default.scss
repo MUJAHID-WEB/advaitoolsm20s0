@@ -22,7 +22,7 @@ body {
   @include typography(base);
   position: relative;
   // padding-top: $header-gap;
-  background-color: var(--color-black);
+  background-color: var(--bg-body);
 }
 
 .bg-white {
@@ -68,20 +68,19 @@ h6 span {
 .button {
   display: block;
   appearance: none;
-  background: var(--color-secondary);
+  background: var(--color-primary);
   color: var(--color-text-dark);
   text-decoration: none;
   cursor: pointer;
-  line-height: 1.625rem;
   transition: all 0.3s ease-in-out;
   /* Add a smooth transition effect */
-  @include typography(text-md, semibold);
-  border: none;
-  padding: 16px 18px;
+  @include typography(text-lg, bold);
+  border: 2px solid var(--color-tertiary);
+  padding: 17px 32px;
   justify-content: center;
   align-items: center;
   // gap: 8px;
-  border-radius: 8px;
+  border-radius: 12px;
   text-transform: capitalize;
 }
 
@@ -189,6 +188,10 @@ h6 span {
 .form-input {
   margin-bottom: 18px;
 }
+
+.form-field .form-label{
+  margin-bottom: 6px;
+}
 //
 //.button-secondary {
 //  display: block;
@@ -218,18 +221,16 @@ textarea {
   border: none;
   width: 100%;
   display: flex;
-  padding: 1rem 1.25rem;
+  padding: 12px 16px;
   flex-direction: column;
   align-items: flex-start;
   align-self: stretch;
   border-radius: 8px;
-  @include typography(base);
+  @include typography(text-md, regular);
   // border: 1px solid var(--color-gray);
   transition: box-shadow 0.3s ease-in-out;
-  /* Add a smooth transition effect */
   background: var(--color-white);
-  color: var(--color-text-light);
-  line-height: 1.4rem;
+  color: var(--color-black);
 
   &:hover {
     box-shadow: 0px 4px 16px 0px rgba(51, 51, 51, 0.08), 0px 4px 4px 0px rgba(51, 51, 51, 0.04);
