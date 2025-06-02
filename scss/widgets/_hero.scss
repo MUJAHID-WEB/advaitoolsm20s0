@@ -136,6 +136,18 @@
         color: var(--hero-text);
       }
 
+      h4 {
+        @include typography('text-md', medium);
+        color: var(--color-primary);
+        border-radius: 8px;
+        background: var(--bg-secondary);
+        padding: 6px 8px;
+
+        @include tablet {
+          @include typography(text-md, regular);
+        }
+      }
+
       .hero-title {
         @include typography(display-2xl, semibold);
         max-width: 700px;

@@ -16,22 +16,23 @@ form:
 
               fields:
 
-                header.footer.top_title.translatable:
-                  type: text
-                  label: Footer Top title
-                  classes: 'translatable'
-                header.footer.top_subtitle.translatable:
+                header.footer_top.subtitle.translatable:
                   type: text
                   label: Footer Top Subtitle
                   classes: 'translatable'
-                header.footer.text.translatable:
-                  type: textarea
-                  label: Fooer top Text
+
+                header.footer_top.h1.translatable:
+                  type: text
+                  label: Footer Top Header
                   classes: 'translatable'
-             
-                header.footer.buttons:
+                header.footer_top.text.translatable:
+                  type: textarea
+                  label: Footer Top Text
+                  classes: 'translatable'
+
+                header.footer_top.buttons:
                   type: list
-                  label: Footer top Buttons
+                  label: Footer Top Buttons
                   style: vertical
                   fields:
                     .text.translatable:
@@ -40,33 +41,7 @@ form:
                       classes: 'translatable'
                     .link:
                       type: text
-                      label: Button Link
-
-                header.footer.top__right_img:
-                  type: pagemediaselect
-                  label: Footer top right image
-
-                header.footer.top_count.translatable:
-                  type: text
-                  label: Footer Top count
-                  classes: 'translatable'
-                header.footer.top_count_text.translatable:
-                  type: text
-                  label: Footer Top count text
-                  classes: 'translatable'
-
-                header.footer.top__right_users_img:
-                  type: pagemediaselect
-                  label: Footer top right users image
-                header.footer.top_users_title.translatable:
-                  type: text
-                  label: Footer approve title
-                  classes: 'translatable'
-                header.footer.top_approve_date.translatable:
-                  type: text
-                  label: Footer Top approve date text
-                  classes: 'translatable'
-           
+                      label: Buttonfooter
  
 
                 header.footer.branding_text.translatable:

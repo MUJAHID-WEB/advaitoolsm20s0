@@ -151,6 +151,7 @@
 
   .pricings-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     gap: 51px;
@@ -169,8 +170,9 @@
       transition: all 0.3s ease-in-out; 
       align-items: center;
       flex: 1 0 31%;
-      max-width: 446px;
-      align-self: stretch;
+      max-width: 985px;
+      width: 100%;
+      // align-self: stretch;
       border-radius: 20px;
       // border: 1px solid var(--border-color);
       background: var(--color-white);
@@ -193,7 +195,7 @@
 
       .pricing-content {
         display: flex;
-        flex-direction: column;
+        // flex-direction: column;
         align-self: stretch;
         position: relative;
         height: 100%;
@@ -210,7 +212,7 @@
           left: 0;
           background: var(--color-white);
           // padding: 8px;
-          width: 100%;
+          // width: 100%;
           border-radius: 4px;
           display: flex;
           justify-content: flex-end;

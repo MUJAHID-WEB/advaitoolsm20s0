@@ -5,7 +5,7 @@
 {% set homepage_content = homepage.header.footer_content %}
 
 
-{# {% include 'widgets/footer-top.html.twig' %} #}
+{% include 'widgets/footer-top.html.twig' %}
 
 <footer class="footer-section slide-up">
 
@@ -18,7 +18,7 @@
 
 					{# {% set homepage = page.find('/') %}
     				<p class="branding-text service-description">{{ homepage.content|raw }}</p> #}
-					{# <p class="branding-text service-description">{{ page.find('/home').header.footer.branding_text.translatable }}</p> #}
+					<p class="branding-text service-description">{{ page.find('/home').header.footer.branding_text.translatable }}</p>
 
 
 					 {# <div class="policy-pages-link-area">
