@@ -1,0 +1,85 @@
+{% set body_classes = 'bg-gray-50 profile-page' %}
+{% extends 'partials/base.html.twig' %}
+{% set title = page.header.profile.title.translatable %}
+
+{% set customer = website_manager_api.getCustomer(grav.user.data.customer_id) %} 
+
+{% set userProfile = forms('user-profile') %}
+{% do userProfile.setAllData({
+    first_name: customer.data.first_name,
+    last_name: customer.data.last_name,
+    address: customer.data.address,
+    city: customer.data.city,
+    postcode: customer.data.postcode,
+    phone: customer.data.phone
+}) %}
+
+
+{% block content %}
+
+    {% include 'partials/no-hero-header.html.twig' with {
+        'title': page.header.title,
+        'links': [
+            {
+                'url': '/' ~ grav.language.getActive,
+                'title': "METRICALO.HOME"|t
+            },
+            {
+                'title': page.header.title
+            }
+        ]
+    } %}
+
+    {% include 'partials/messages.html.twig' %}
+    <div class="max-w-6xl mx-auto rounded-lg shadow-2xl shadow-gray-300 border border-gray-200 p-12 slide-up main-container">
+        <div class="content-section-profile">
+            <div class="mb-8 content-section">
+                <a class="btn btn__simple my-orders" href="{{ url(grav.language.getActive ~ '/profile/orders') }}">
+                    <span>{{ 'METRICALO.MY_ORDERS'|t }}</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.84315 0.928635L16.2071 7.29259C16.5976 7.68312 16.5976 8.31628 16.2071 8.70681L9.84315 15.0708C9.45262 15.4613 8.81946 15.4613 8.42893 15.0708C8.03841 14.6802 8.03841 14.0471 8.42893 13.6566L13.0858 8.9997L1.5 8.9997C0.947716 8.9997 0.500001 8.55199 0.500001 7.9997C0.500001 7.44742 0.947716 6.9997 1.5 6.9997L13.0858 6.9997L8.42893 2.34285C8.03841 1.95232 8.03841 1.31916 8.42893 0.928635C8.81946 0.53811 9.45262 0.53811 9.84315 0.928635Z" fill="#F9FD99"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="container">
+                <div class="paragraph-column">
+                    <h2 class="text-4xl font-bold mb-8 text-brand">
+{#                        {{ 'METRICALO.PROFILE'|t }}#}
+                        {{ title }}
+                    </h2>
+                    {% include 'forms/form.html.twig' with { form: userProfile, action: '#' } %}
+                    <div class="form-actions flex justify-between space-x-2">
+                        <a href="{{ url(grav.language.getActive ~ '/profile/change-password') }}" class="button primary no-underline">
+                            {# <svg xmlns="http://www.w3.org/2000/svg" width="10" height="16" viewBox="0 0 10 16" fill="none">
+                                <path d="M8.76037 7.19801L8.75936 7.19694L2.84018 1.30631C2.39674 0.865025 1.6795 0.866667 1.2381 1.31016C0.796758 1.7536 0.798458 2.47084 1.2419 2.91219L5.21603 6.86706C6.09265 7.74368 6.09265 8.25602 5.21598 9.13269L1.24195 13.0876C0.798514 13.5289 0.796816 14.2461 1.23816 14.6896C1.67956 15.1331 2.39686 15.1347 2.84024 14.6934L8.75941 8.80281L8.76043 8.80174C9.2041 8.35892 9.20268 7.63936 8.76037 7.19801Z" fill="white"/>
+                            </svg> #}
+                            {{ 'METRICALO.CHANGE_PASSWORD'|t }}
+                        </a>
+                        <button form="user-profile" type="submit" class="button primary">
+                            {# <svg xmlns="http://www.w3.org/2000/svg" width="10" height="16" viewBox="0 0 10 16" fill="none">
+                                <path d="M8.76037 7.19801L8.75936 7.19694L2.84018 1.30631C2.39674 0.865025 1.6795 0.866667 1.2381 1.31016C0.796758 1.7536 0.798458 2.47084 1.2419 2.91219L5.21603 6.86706C6.09265 7.74368 6.09265 8.25602 5.21598 9.13269L1.24195 13.0876C0.798514 13.5289 0.796816 14.2461 1.23816 14.6896C1.67956 15.1331 2.39686 15.1347 2.84024 14.6934L8.75941 8.80281L8.76043 8.80174C9.2041 8.35892 9.20268 7.63936 8.76037 7.19801Z" fill="white"/>
+                            </svg> #}
+
+                            {{ 'METRICALO.EDIT_PROFILE'|t }}
+                        </button>
+                    </div>
+                </div>
+                <div class="paragraph-column">
+                    
+                    <h2 class="text-4xl font-bold mb-8 text-brand">
+                        {# <svg xmlns="http://www.w3.org/2000/svg" width="104" height="2" viewBox="0 0 104 2" fill="none">
+                            <path d="M1 1H103" stroke="#8F8F8F" stroke-linecap="round"/>
+                        </svg> #}
+                        {{ 'METRICALO.SUBSCRIPTION'|t }}
+                        {# <svg xmlns="http://www.w3.org/2000/svg" width="104" height="2" viewBox="0 0 104 2" fill="none">
+                            <path d="M1 1H103" stroke="#8F8F8F" stroke-linecap="round"/>
+                        </svg> #}
+                    </h2>
+                    {% include 'partials/subscription.html.twig' %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {# {% include 'widgets/contact-section.html.twig' %} #}
+{% endblock %}

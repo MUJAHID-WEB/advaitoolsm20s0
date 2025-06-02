@@ -1,0 +1,39 @@
+{% set noHeroContent = page.header.no_hero_content %}
+{% set _title = noHeroContent._title.translatable %}
+{% set subTitle = noHeroContent.sub_title.translatable %}
+
+<div class="{{ max_width }} {{ section_padding }} flex-1 w-full py-24 no-hero-header">
+    <div class="no-hero slide-up container">
+        <div class="no-hero-title-wrapper">
+
+            {% if _title != '' %}
+                <h1 class="display-1 mb-3">{{ _title | raw }}</h1>
+            {% else %}
+                <h1 class="display-1 mb-3">{{ title | raw }}</h1>
+            {% endif %}
+
+            <nav class="d-inline-block no-hero-breadcrumb" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    {% for index, link in links %}
+                        {% set last = index + 1 == links|length %}
+                        <li class="breadcrumb-item {{ breadcrumb_text_color }} {{ last ? 'active' : '' }}">
+                            {% if link.url %}
+                                <a href="{{ link.url }}" class="{{ breadcrumb_text_color }}">{{ link.title }}</a>
+                            {% else %}
+                                {{ link.title }}
+                            {% endif %}
+                        </li>
+
+                        {% if index + 1 != links|length %}
+                            <li class="breadcrumb-item arry {{ breadcrumb_text_color }}">
+                                >
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ol>
+            </nav>
+        
+
+        </div>
+    </div>
+</div>

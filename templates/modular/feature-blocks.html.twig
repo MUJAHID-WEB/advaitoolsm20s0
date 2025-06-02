@@ -1,0 +1,107 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.module %}
+
+{% block render_block %}
+
+    <div class="feature-section " style="{% if(bg) %}background-image: url('{{ bg }}'){% endif %}" >
+        <div class="container">
+
+            <div class="feature-wrapper">
+                <div class="features-header-section">
+                    {% if module.title %}
+                        <h3 class="title section-title">{{ module.title.translatable|striptags('<span>')|raw }}</h3>
+                    {% endif %}
+{# 
+                    <div class="description">
+                        {% if page.content %}
+                            {{ page.content|raw }}
+                        {% endif %}
+                    
+                    </div>				 #}
+                </div>       
+
+                {# <div class="features-content-wrapper">
+
+                    {% set features = page.header.feature_blocks %}
+                    {% set features_first_row = page.header.feature_blocks[:3] %}
+                    {% set features_second_row = page.header.feature_blocks[3:] %}
+
+                    {% for feature_block in features_first_row %}
+                        {% if feature_block.description != '' and feature_block.title != '' %}
+
+                            <div class="feature-item">
+                                {% set image = page.media[feature_block.image] %}
+
+                                <div class="feature-image">
+                                    <img class="" src="{{ image.url }}"/>
+                                </div>
+
+                            
+                                
+                                <div class="feature-content">
+                                    <h4 class="feature-title">{{ feature_block.title.translatable }}</h4>
+                                    <p class="feature-description">{{ feature_block.description.translatable }}</p>
+
+                                </div>                                    
+                            </div>
+
+                        {% endif %}
+                    {% endfor %}
+
+                    {% for feature_block in features_second_row %}
+                        {% if feature_block.description != '' and feature_block.title != '' %}
+
+                            <div class="feature-item second-row-item-hide">
+                                {% set image = page.media[feature_block.image] %}
+
+                                <div class="feature-image">
+                                    <img class="" src="{{ image.url }}"/>
+                                </div>
+
+                                <hr>
+                                
+                                <div class="feature-content">
+                                    <h4 class="feature-title">{{ feature_block.title.translatable }}</h4>
+                                    <p class="feature-description">{{ feature_block.description.translatable }}</p>
+
+                                </div>                                    
+                            </div>
+
+                        {% endif %}
+                    {% endfor %}
+       
+                </div> #}
+
+                <div class="video-container">
+                    <video 
+                        id="myVideo"
+                        class="lazy-video"
+                        width="100%"
+                        preload="none"
+                        poster="{{ url('theme://images/video-poster.webp') }}"
+                        data-src="{{ url('theme://images/video.mp4') }}">
+                    </video>
+
+                    <button class="play-button">
+                        <span class="play-button-inside">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <g clip-path="url(#clip0_158_3320)">
+                                    <path d="M5.10545 0.529181C2.94172 -0.711968 1.1875 0.304796 1.1875 2.79837V21.1999C1.1875 23.6959 2.94172 24.7114 5.10545 23.4714L21.1893 14.2474C23.3538 13.0059 23.3538 10.9943 21.1893 9.753L5.10545 0.529181Z" fill="#F9FD99"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_158_3320">
+                                    <rect width="24" height="24" fill="white"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </span>
+                    </button>
+                    {# <button class="play-button">▶</button> #}
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

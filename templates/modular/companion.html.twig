@@ -1,0 +1,112 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.contents %}
+
+
+{% set list_title_icon = page.media[page.header.contents.list_title_icon] %}
+
+{% block render_block %}
+	<div class="companion-wrapper ">
+		<div class="container about-listing-animation {{ module.parent_classes }}">
+			<div class="companion_container">
+
+				<div class="header-content">
+					<div class="con_left">
+						<h4>{{ module.subtitle.translatable|striptags('<span>')|raw }}</h4>
+
+						<h3>{{ module.title.translatable|striptags('<span>')|raw }}</h3>
+
+					</div>
+					
+					<div class="con_right">
+						<p>{{ module.description.translatable }}</p>
+
+						{% for button in module.buttons  %}
+						
+							<a class="button " href="{{ home_url|e }}{{ button.link }}">
+								<span>{{ button.text.translatable }}</span>
+					
+							</a>
+						{% endfor %}
+
+					</div>
+					
+				</div>
+				
+
+				<div class="contents-wrapper">
+
+					<div class ="tab-wrapper">
+						{% for section in page.header.about_sections %}
+							<div class="tab-content {% if loop.first %}active{% endif %}" data-index="{{ loop.index0 }}">
+			
+								<h5 class="tab-title">{{ section.tab_title.translatable }}</h5>
+								
+							</div>
+
+						{% endfor %}
+					</div>
+
+					<div class="listing-contents">
+
+						{% for section in page.header.about_sections %}
+							<div class="listing-content-container {% if loop.first %}active{% endif %}" data-index="{{ loop.index0 }}">
+
+								{% set image = page.media[section.icon] %}
+								{% if image %}
+									<div class="companion-image">
+										<img  src="{{ image.url }}" alt="Image"/>
+									</div>
+								{% endif %}
+
+								<div class="listing-content" >
+				
+									<h5 class="listing-title">{{ section.title.translatable }}</h5>
+
+									<div class="content">
+										{% for card in section.about_card  %}
+											<div class="card-content">
+												<img src="{{ url('theme://images/companion/s'~ loop.index ~'.svg') }}" />
+												<p class="card-desc">
+													{{ card.description.translatable }}
+												</p>
+											</div>
+
+										{% endfor %}
+									</div>
+
+
+								</div>
+								
+							</div>
+						{% endfor %}
+					
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+	<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		const tabButtons = document.querySelectorAll(".tab-content");
+		const contentContainers = document.querySelectorAll(".listing-content-container");
+
+		tabButtons.forEach((button, index) => {
+			button.addEventListener("click", () => {
+				
+				tabButtons.forEach(btn => btn.classList.remove("active"));
+				contentContainers.forEach(content => content.classList.remove("active"));
+
+				
+				button.classList.add("active");
+				contentContainers[index].classList.add("active");
+			});
+		});
+	});
+</script>
+
+
+
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.contents %}
+{% set features = page.header.about_company_features %}
+{% set image = page.media[module.image] %}
+{% set bottom_left_image = page.media[module.bottom_left_image] %}
+
+{% block render_block %}
+    <div class="about-company-wrapper slide-up {{ module.parent_classes }}">
+        <div class="container">
+
+            <div class="contents-wrapper {{ module.child_classes }}">
+
+                <div class="header-content">
+                    {% if module.header_title != null %}
+                        <h3>{{ module.header_title.translatable|striptags('<span>')|raw }}</h3>
+                    {% endif %}
+
+                    {% if module.header_desc != null %}
+                        <p>{{ module.header_desc.translatable|raw }}</p>
+                    {% endif %}
+                </div>
+
+                <div class="company-contents {{ module.direction }}">
+
+                    <div class="image">
+                        {# {% if module.img_on_content != null %}
+                            <img class="img-on-content" src="{{ page.media[module.img_on_content].url() }}"/>
+                        {% endif %} #}
+
+                        <img class="main-img" src="{{ image.url }}" alt="About Company Image"/>
+                    </div>
+                    <div class="contents">
+                        <div class="contents-data">
+                            {% if module.subtitle != null %}
+                                <p class="content-sub-title">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="3" viewBox="0 0 21 3" fill="none">
+                                        <path d="M2 1.5L19 1.5" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                                    </svg>
+                                    {{ module.subtitle.translatable }}
+                                </p>
+                            {% endif %}
+                            {% if module.content_title != null %}
+                                <h3 class="content-title">{{ module.content_title.translatable|striptags('<span>,<br>')|raw }}</h3>
+                            {% endif %}
+                            
+                        </div>
+                        {% if page.header.about_company_features | length > 0 %}
+                            <div class="contents-list">
+                                {% for item in page.header.about_company_features %}
+                                    {% set icon = page.media[item.icon] %}
+                                    <div class="contents-list-item">
+                                        <div class="icon">
+                                            <img src="{{ icon.url }}" alt="">
+                                            <h4 class="title">{{ item.title.translatable }}</h4>
+                                        </div>
+                                        <div class="description">
+                                            <p>{{ item.brief.translatable }}</p>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+
+                        {# <div class="mb-8 content-section"> #}
+                            <a class="button" href="{{ url(grav.language.getActive ~ '/about-us') }}">
+                                {# <span>{{ 'METRICALO.MY_ORDERS'|t }}</span>button_text #}
+                                {{ module.button_text.translatable }}
+                            </a>
+                        {# </div> #}
+                    </div>
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

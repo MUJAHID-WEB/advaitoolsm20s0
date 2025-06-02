@@ -1,0 +1,67 @@
+.page-terms .content-section{
+  padding: 2.5rem 2rem !important;
+  @include desktop-small{
+    padding: 2.5rem 1rem !important;
+  }
+}
+.terms {
+  color: var(--color-white) !important;
+  .terms-section .belong-overview {
+    font-size: 1.25rem !important;
+  }
+  h1 {
+    font-size: 1.25rem !important;
+  }
+  a {
+    color: var(--color-white)
+  }
+}
+.content-section .terms{
+  // background: var(--policy-bg-container);
+  .terms-area {
+    display: none !important;
+
+    &.active {
+      display: block !important;
+    }
+  }
+
+  .language-switcher {
+    display: none;
+  }
+}
+
+.page-terms {
+  color: var(--color-text) !important;
+
+  .terms-section, th {
+    background: var(--color-black) !important;
+    color: var(--color-white) !important;
+  }
+
+  .main-container {
+    h1, h2, h3, h4, h5, p, li, a, td, th {
+      color: var(--color-white) !important;
+    }
+
+    tbody {
+      background-color: var(--color-black) !important;
+      color: var(--color-white) !important;
+      tr {
+        td {
+          background: var(--bg-black) !important;
+        }
+      }
+    }
+  }
+}
+
+.terms-section {
+    color: var(--color-white)
+}
+// .page-terms {
+//   background: var(--policy-bg-container);
+// }
+// .base {
+//   background: var(--policy-bg-container);
+// }

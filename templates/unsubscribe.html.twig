@@ -1,0 +1,54 @@
+{% set body_classes = "page-unsubscribe"%}
+{% extends 'partials/base.html.twig' %}
+
+{% block article %}
+    {% set module = page.header %}
+    {% include 'partials/no-hero-header.html.twig' with {
+        'title': "METRICALO.CANCEL_SUBSCRIPTION"|t,
+        'links': [
+            {
+                'url': '/',
+                'title': "METRICALO.HOME"|t
+            },
+            {
+                'title': "METRICALO.CANCEL_SUBSCRIPTION"|t
+            }
+        ]
+    } %}
+
+    <article class="{{ max_width }} {{ section_padding }} flex-1 w-full py-24 login-page-content wrapper bg-light angled upper-end slide-up main-container">
+        <div class="form-login-wrapper">
+            <section id="grav-login">
+            <div class="unsubscribe-form">
+                <p class="unsubscribe-title">{{ "METRICALO.ARE_YOU_SURE_CANCELLATION"|t }}</p>
+
+                {% include "forms/form.html.twig" with {form: forms('unsubscribe'), action: '#'} %}
+                {# <div class="form-input-wrapper ">
+                    <div class="form-label">
+                        <label class="inline">
+                            {{ 'METRICALO.EMAIL'|t }}<span class="required">*</span>
+                        </label>
+                    </div>
+                    <input type="text" class="form-input" placeholder="{{ 'METRICALO.EMAIL'|t }}">
+                </div>
+                <div class="form-input-wrapper ">
+                    <div class="form-label">
+                        <label class="inline">
+                            {{ 'METRICALO.LAST_4_DIGITS'|t }}<span class="required">*</span>
+                        </label>
+                    </div>
+                    <input type="text" class="form-input" placeholder="{{ 'METRICALO.LAST_4_DIGITS'|t }}">
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="button button-secondary">{{'METRICALO.CANCEL_SUBSCRIPTION'|t}}</button>
+                </div> #}
+            </div> 
+            </section>
+        </div>
+    </article>
+
+    
+    {% set bg = url('theme://images/bg-dot.svg') %}
+    <img class="about-bg-dotted-img" src="{{ bg }}" alt="">
+
+{% endblock %}

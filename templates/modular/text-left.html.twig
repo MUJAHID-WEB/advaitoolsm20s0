@@ -1,0 +1,28 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.text_left %}
+{% set image = page.media[page.header.text_left.image] %}
+
+{% block render_block %}
+	<div class=" text-left slide-up {{ module.classes }}">
+		<div class="container text-left-container">
+			<div class="paragraph-image">
+				<img class="" src="{{ image.url }}"/>
+			</div>
+			<div class="text-left-text">
+				<div class="block-title">
+					<h3>{{ module.title.translatable|striptags('<span>')|raw }}</h3>
+				</div>
+				{{ page.content|raw }}
+                <a class="button" href="{{ url(grav.language.getActive ~ '/#modular_pricing') }}">
+                    
+                    {{ module.button_title.translatable }}
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                        <path d="M12 16.5L16 12.5M16 12.5L12 8.5M16 12.5H8M22 12.5C22 18.0228 17.5228 22.5 12 22.5C6.47715 22.5 2 18.0228 2 12.5C2 6.97715 6.47715 2.5 12 2.5C17.5228 2.5 22 6.97715 22 12.5Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+			</div>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,231 @@
+@keyframes slideUp {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes heroSlideDown {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+
+  }
+
+}
+
+.hero {
+  display: flex;
+  padding: 184px 0 0;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  align-self: stretch;
+  background-size: 100% 100%;
+  background-color: var(--hero-bg-container);
+
+  @include mobile {
+    display: block;
+  }
+
+  @include desktop-small {
+    height: auto;
+    padding: 118px 0 50px;
+  }
+
+  h1 {
+    max-width: 100%;
+
+    @include desktop-small {
+      text-align: center;
+      @include typography(display-lg, bold);
+    }
+
+    @include typography(display-2xl, bold);
+    color: var(--hero-title);
+
+    span {
+      color: var(--hero-highlight) !important;
+    }
+  }
+
+  &.medium {
+    height: 33.4375rem;
+
+    @include desktop-small {
+      height: auto;
+    }
+  }
+
+  // .text_image_center {
+  //   flex-direction: column;
+  //   // gap: 2rem !important;
+  //   flex-basis: 70%;
+  //   text-align: center;
+  // }
+
+  .text_right__image_left {
+    flex-direction: row-reverse;
+  }
+
+  .hero-container {
+    display: flex;
+    flex-direction: column;
+    // @include padding(padding-lg);
+    justify-content: center;
+    gap: 60px;
+    max-width: 1224px;
+    overflow: hidden;
+
+    @include desktop-small {
+      flex-direction: column;
+      align-items: flex-start;
+      @include padding(padding-sm);
+      gap: 100px;
+    }
+
+    .hero_text_left {
+      align-items: flex-start;
+      flex: 1 0 49% !important;
+    }
+
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      margin: 0 auto;
+
+      position: relative;
+      // opacity: 0;
+      animation: heroSlideDown 2s ease-out 0.3s forwards;
+      // flex: 1 0 60%;
+
+      @include desktop-small {
+        text-align: center;
+        align-items: center;
+
+        .button {
+          margin: 0 auto;
+          color: var(--color-button);
+          background: var(--bg-button);
+        }
+      }
+
+      p {
+        @include typography(text-xl, regular);
+        max-width: 662px;
+        text-align: center;
+
+        @include desktop-small {
+          @include typography(text-lg, regular);
+          order: 3;
+        }
+
+        color: var(--hero-text);
+      }
+
+      .hero-title {
+        @include typography(display-2xl, semibold);
+        max-width: 700px;
+        text-align: center;
+        font-family: var(--secondary-font);
+
+        @include desktop-small {
+          order: 1;
+        }
+
+        @include mobile {
+          font-style: normal;
+          @include typography(display-lg, semibold);
+          /* 57.6px */
+        }
+
+        color: var(--hero-title);
+      }
+
+      .button {
+        display: flex;
+        align-items: center;
+        @include typography(text-lg, semibold);
+        border-radius: 8px;
+        gap: 12px;
+        margin-top: 16px;
+
+        padding: 16px 28px;
+        background: var(--color-primary);
+        color: var(--color-black);
+
+        @include desktop-small {
+          order: 3;
+        }
+
+
+
+        svg {
+          g {
+            path {
+              stroke: var(--color-button);
+            }
+          }
+        }
+      }
+
+    }
+
+    .show-in-desktop {
+      margin-bottom: -5px;
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    .show-in-mobile {
+      display: none;
+
+      @include mobile {
+        display: block;
+      }
+    }
+
+    .hero-image {
+      flex: 1 0 40%;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      position: relative; // Needed for smooth animation
+      overflow: hidden;
+      animation: slideUp 2s ease-out forwards;
+      // opacity: 0;
+
+
+      @include desktop-small {
+        // max-width: 500px;
+        order: 4;
+      }
+
+      margin: 0 auto;
+
+      img {
+        width: 100%;
+        margin-bottom: -2px;
+
+        @include desktop-small {
+          margin-bottom: 0px;
+        }
+      }
+    }
+  }
+}

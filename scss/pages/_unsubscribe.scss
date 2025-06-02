@@ -1,0 +1,49 @@
+.page-unsubscribe {
+  .login-page-content {
+    padding: 80px 0 200px;
+
+    @include desktop-small {
+      padding: 40px 16px 160px;
+    }
+    @include mobile {
+      padding: 40px 16px 200px;
+    }
+  }
+}
+
+.unsubscribe-title {
+
+  @include typography (display-xs, semibold);
+  text-align: center;
+  margin-bottom: 32px;
+  color: var(--color-white);
+  max-width: 440px;
+  margin: 0 auto;
+  margin-bottom: 32px; 
+}
+.inline {
+  @include typography (text-md, semibold);
+  color: var(--color-white);
+}
+
+.unsubscribe-form {
+
+  .form-input {
+    &::placeholder {
+      color: var(--color-white);
+    }
+  }
+
+  .form-actions {
+    .button {
+      width: 100%;
+      background: var(--color-secondary) ;
+      color: var(--color-text-dark);
+      border-radius: 8px;
+      box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+      @include typography(text-md, semibold);
+
+      margin-top: 14px;
+    }
+  }
+}
