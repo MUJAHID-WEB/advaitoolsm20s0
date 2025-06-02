@@ -393,17 +393,19 @@ ol, ul {
 }
 
 .section-title {
-	background-image: url(../../images/title-shap.png);
-	background-repeat: no-repeat;
-	background-position: bottom;
-}
+	@include typography('display-lg', semibold);
 
-.section-title-left {
-	background-image: url(../../images/title-shap.png);
-	background-repeat: no-repeat;
-	background-position: left;
+	@include desktop-small{
+		@include typography('display-sm', bold);
+	}
 }
+.brief {
+	@include typography('text-lg', regular);
 
+	@include desktop-small{
+		@include typography('display-xs', regular);
+	}
+}
 // .header-wrapper:not(.home-page) {
 // 	background: var(--color-primary);
 

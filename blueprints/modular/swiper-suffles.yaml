@@ -25,7 +25,12 @@ form:
 
                 header.contents.brief.translatable:
                   type: textarea
-                  label: Text
+                  label: Brief
+                  classes: 'translatable'
+
+                header.contents.btn_text.translatable:
+                  type: text
+                  label: BTN Text
                   classes: 'translatable'
                 
 

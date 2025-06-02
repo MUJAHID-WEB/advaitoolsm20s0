@@ -23,6 +23,7 @@ body {
   position: relative;
   // padding-top: $header-gap;
   background-color: var(--color-black);
+  font-family: var(--default-font);
 }
 
 .bg-white {
@@ -54,6 +55,15 @@ h3{
   @include desktop-small {
     @include typography(display-md, bold);
   }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--secondary-font);
 }
 
 h1 span,
