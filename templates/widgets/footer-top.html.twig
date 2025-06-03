@@ -9,7 +9,19 @@
 			<div class="wrapper">
 
 				<div class="contents"> 
-					<h4 class="subtitle">{{ module.subtitle.translatable }}</h4>
+					<h4 class="subtitle">
+
+						<svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+						<g opacity="0.8">
+							<path d="M3.20258 12C7.70258 12 12.2026 7.5 12.2026 3C12.2026 7.5 16.7026 12 21.2026 12C16.7026 12 12.2026 16.5 12.2026 21C12.2026 16.5 7.70258 12 3.20258 12Z" stroke="#FBFBFB" stroke-width="1.5" stroke-linejoin="round"/>
+							<path d="M2.20258 19.5C3.03591 19.5 4.70258 17.8333 4.70258 17C4.70258 17.8333 6.36925 19.5 7.20258 19.5C6.36925 19.5 4.70258 21.1667 4.70258 22C4.70258 21.1667 3.03591 19.5 2.20258 19.5Z" stroke="#FBFBFB" stroke-width="1.5" stroke-linejoin="round"/>
+							<path d="M16.2026 5C17.2026 5 19.2026 3 19.2026 2C19.2026 3 21.2026 5 22.2026 5C21.2026 5 19.2026 7 19.2026 8C19.2026 7 17.2026 5 16.2026 5Z" stroke="#FBFBFB" stroke-width="1.5" stroke-linejoin="round"/>
+						</g>
+						</svg>
+						
+						{{ module.subtitle.translatable }}
+					
+					</h4>
 
 					<h1 class="title">
 						{{ module.h1.translatable|striptags('<span>')|raw }}
