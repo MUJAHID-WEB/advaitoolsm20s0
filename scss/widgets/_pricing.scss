@@ -7,7 +7,7 @@
   align-self: stretch;  
   margin: auto;
   background-color: var(--color-black);
-  background-image: url(../../images/pricing/pricing_bg.webp);
+  background-image: url(../../images/pricing/pricing-bg.svg);
 
   // background-image: url(../../images/pricing/pricing_bg_top.svg), url(../../images/pricing/pricing_bg_bottom.svg);
   background-position: center;
@@ -15,8 +15,10 @@
   background-size: 100% 100%;
 
   @include tablet {
-    gap:24px;
+    gap: 24px;
     padding: 40px 0;
+    background-image: url(../../images/pricing/pricing-bg-mobile.svg);
+    background-size: cover;
   }
 
   .top {
@@ -202,9 +204,11 @@
         border: 1px solid #424242;
         background: var(--color-secondary);
 
-        // @include desktop-small{
-        //   padding:  22px 22px 0 22px;
-        // }
+        @include desktop-small{
+          padding: 24px;
+          flex-direction: column;
+          gap: 2rem;
+        }
 
 
         .recommended-tag-parent {
@@ -260,6 +264,10 @@
           border-radius: 22px;
           width: 40%;
 
+          @include desktop-small {
+            width: 100%;
+          }
+
           .package-top-section-img{
             display: none;
             img{
@@ -287,7 +295,7 @@
             .package-title{
               display: flex;
               gap: 14px;
-              align-items: flex-start;
+              align-items: center;
               justify-content: flex-start;
               text-align: left;
               width: 100%;
@@ -313,9 +321,9 @@
               //   @include typography(display-sm, medium);
               // }
               .type-wrap {
-                @include typography(display-xs, semibold);
+                @include typography(display-sm, semibold);
                 color: var(--color-black);
-                font-family: var(--secondary-font);
+                font-family: var(--secondary-font);              
               }
             }
 
@@ -340,13 +348,8 @@
                   color: var(--color-black);
                   text-align: left;
                   font-style: normal;
-                  @include typography(display-lg, semibold);
+                  @include typography(display-md, semibold);
                   font-family: var(--secondary-font);
-                  // font-weight: 600;
-                  // line-height: 60px;
-                  // letter-spacing: -0.96px;
-                  // margin-bottom: 16px;
-                  // font-family: var(--secondary-font);
 
                   // @include desktop-small {
                   //   @include typography(display-sm, semibold);
@@ -355,7 +358,7 @@
                 .billed-days {
                   margin-bottom: 0 !important;
                   color: var(--color-black);
-                  @include typography(text-sm, medium);
+                  @include typography(text-md, regular);
                 }
               }
 
@@ -392,7 +395,7 @@
                   height: unset !important;
                 }
                 .trial-days, .trial{
-                  @include typography(text-md, bold);
+                  @include typography(text-xl, bold);
 
                   // @include desktop-small{
                   //   @include typography(text-sm, regular);
@@ -426,6 +429,11 @@
           // border-radius: 24px 24px 0 0;
 
           // background-color: var(--color-secondary);
+
+          @include desktop-small {
+            width: 100%;
+            padding: 0px;
+          }
 
           .benefit {
             display: flex;
