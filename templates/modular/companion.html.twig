@@ -10,43 +10,56 @@
 {% block render_block %}
 	<div class="companion-wrapper about-listing-animation {{ module.parent_classes }}">
 		<div class="container">
-			<div class="header-content">
-				<h3>{{ module.title.translatable|striptags('<span>')|raw }}</h3>
 
-				<p>{{ module.description.translatable|striptags('<span>')|raw }}</p>
+			<div class="wrapper">
 
+				<div class="header-content">
 
-			</div>
-			<div class="contents-wrapper {{ module.child_classes }}">
-				<div class="listing-contents">
-					{# <div class="header-content">
-						<h3>{{ module.title.translatable|striptags('<span>')|raw }}</h3>
-					</div> #}
+					<h3>{{ module.title.translatable|striptags('<span>')|raw }}</h3>
 
-					<div class="companion-content-wrapper">
+					<div class="actions">
 
-						{# <div class="active-line"></div> #}
+						<p>{{ module.description.translatable|striptags('<span>')|raw }}</p>
+						<a href="{{ grav.language.active }}/contact" class="companion-btn">{{ module.btn_text.translatable }}</a>
+					</div>
+					
+				</div>
 
-						<div class="listing-content-container">
-							{% for section in page.header.about_sections %}
-								<div class="listing-content {% if loop.first %}active{% endif %}" data-index="{{ loop.index0 }}">
-									<h5 class="listing-title">{{ section.title.translatable }}</h5>
-									<p>{{ section.description.translatable }}</p>
-								</div>
-							{% endfor %}
+				<div class="contents-wrapper {{ module.child_classes }}">
+
+					<div class="image-wrapper">
+						{% for section in page.header.about_sections %}
+							{% set image = page.media[section.img] %}
+							{% if image %}
+								<img class="companion-image {% if loop.first %}active{% endif %}" src="{{ image.url }}" data-index="{{ loop.index0 }}" alt="Companion Image {{ loop.index }}"/>
+							{% endif %}
+						{% endfor %}
+					</div>
+
+					<div class="listing-contents">
+
+						<div class="companion-content-wrapper">
+							<div class="listing-content-container">
+								{% for section in page.header.about_sections %}
+									<div class="listing-content {% if loop.first %}active{% endif %}" data-index="{{ loop.index0 }}">
+										<h5 class="listing-title">
+										<img src="{{ page.media[section.icon].url }}" alt="Icon" />
+										
+											{{ section.title.translatable }}
+										
+										</h5>
+										<p>{{ section.description.translatable }}</p>
+									</div>
+								{% endfor %}
+							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="image-wrapper">
-					{% for section in page.header.about_sections %}
-						{% set image = page.media[section.icon] %}
-						{% if image %}
-							<img class="companion-image {% if loop.first %}active{% endif %}" src="{{ image.url }}" data-index="{{ loop.index0 }}" alt="Companion Image {{ loop.index }}"/>
-						{% endif %}
-					{% endfor %}
 				</div>
+			
 			</div>
+
+			
 		</div>
 	</div>
 

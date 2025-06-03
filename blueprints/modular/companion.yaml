@@ -28,9 +28,14 @@ form:
               label: List Title
               classess: 'translatable'
 
+            header.contents.btn_text.translatable:
+              type: text
+              label: BTN Text
+              classess: 'translatable'
+
             header.contents.list_title_icon:
               type: pagemediaselect
-              label: List Title Icon
+              label: List Title Icon            
               
             header.about_sections_section:
               # ordering@: 4
@@ -42,9 +47,16 @@ form:
                 header.about_sections:
                   type: list
                   fields:
+                    .img:
+                      type: pagemediaselect
+                      label: Image
+                      preview_images: true 
+
                     .icon:
                       type: pagemediaselect
                       label: Icon
+                      preview_images: true 
+
                     .title.translatable:
                       type: text
                       label: Title
