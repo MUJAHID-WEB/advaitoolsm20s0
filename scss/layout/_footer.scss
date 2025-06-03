@@ -383,190 +383,112 @@
   padding: 60px 0;
   align-items: center;
   align-self: stretch;
-  // background-color: var(--color-secondary);
-  position: relative;
-  overflow: hidden;
+  background-image: url(../../images/footer/footer-overlay-bg.svg);
+
 
   @include desktop-small {
     padding: 40px 0 60px;
   }
 
-  .container {
+  .wrapper {
     display: flex;
-    @include padding(padding-lg);
+    text-align: center;
+    flex-direction: row-reverse;
+    align-items: center;
     justify-content: center;
-
-
-    @include mobile {
-      width: 100%;
-    }
+    color: var(--color-white);
+    gap: 1.25rem;
+    padding: 65px 100px 0 50px;
+    // max-width: 1440px;
+    border-radius: 24px;
+    // background-color: var(--color-primary);
+    position: relative;
 
     @include desktop-small {
-      flex-direction: column;
-      align-items: flex-start;
-      @include padding(padding-sm);
-    }
+      padding: 51px 20px 0;
+      width: 100%;
+      gap: 51px;
+      flex-direction: column-reverse;
+    }      
 
-    .offer-text {
+    .contents {
       display: flex;
-      text-align: center;
-      flex-direction: row-reverse;
-      align-items: center;
-      justify-content: center;
-      color: var(--color-white);
-      gap: 1.25rem;
-      padding: 65px 100px 0 50px;
-      // max-width: 1440px;
-      border-radius: 24px;
-      // background-color: var(--color-primary);
-      position: relative;
+      flex-direction: column;
+      justify-content: start;
+      align-items: flex-start;
+      text-align: left;
+      gap: 24px;
+      padding-bottom: 65px;
+      flex: 2.1;
 
       @include desktop-small {
-        padding: 51px 20px 0;
-        width: 100%;
-        gap: 51px;
-        flex-direction: column-reverse;
+        padding-bottom: 0;
+      
       }
 
-      .left_top {
-        position: absolute;
-        top: 0;
-        left: 0;
-        border-radius: 32px 0;
-
-        @include tablet {
-          width: 70px;
-          height: auto;
-        }
-      }
-
-      .right_bottom {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        border-radius: 32px 0;
-
-        @include tablet {
-          width: 70px;
-          height: auto;
-        }
-      }
-
-      .offer-image {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex: 1;
-        justify-content: end;
+      .subtitle {
+        color: var(--color-white);
+        @include typography(text-xl, bold);
+        max-width: 88%;
 
         @include desktop-small {
-          // position: unset;
-          justify-content: center;
-        }
-
-        img {
-          // width: 100%;
-
-          @include desktop-small{
-            width: 66%;
-          }
-        }
-      }
-
-      .offer-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
-        align-items: flex-start;
-        text-align: left;
-        gap: 24px;
-        padding-bottom: 65px;
-        flex: 2.1;
-
-        @include desktop-small {
-          // text-align: center;
-          // align-items: center;
-          padding-bottom: 0;
-        
-        }
-
-        .subtitle {
-          color: var(--color-white);
-          @include typography(text-xl, bold);
-          max-width: 88%;
-
-          @include desktop-small {
-            max-width: 100%;
-            @include typography(text-lg, bold);
-          }
-
-        }
-
-        .offer-title {
-          font-family: var(--secondary-font);
-          color: var(--color-secondary);
-          @include typography(display-lg, bold);
-
-          @include desktop-small {
-            @include typography(display-sm, semibold);
-          }
-
-          span {
-            display: block;
-            font-family: var(--secondary-font);
-            color: var(--color-primary);
-            @include typography(display-lg, medium);
-
-            @include desktop-small {
-              display: inline;
-              @include typography(display-md, medium);
-            }
-          }
-        }
-
-        p {
-          color: var(--color-white);
-          @include typography(text-xl, bold);
-          max-width: 88%;
-
-          @include desktop-small {
-            max-width: 100%;
-            @include typography(text-lg, bold);
-          }
-
-        }
-
-        .button {
-          margin-top: 16px;
-          align-self: flex-start;
-          display: flex;
-          align-items: center;
-          padding: 12px 24px;
+          max-width: 100%;
           @include typography(text-lg, bold);
+        }
 
-          @include desktop-small {
-            // align-self: center;
-            @include typography(text-md, medium);
-          }
+      }
 
-          background: var(--color-white);
-          position: relative;
-          color: var(--color-text-dark);
+      .title {
+        font-family: var(--secondary-font);
+        color: var(--color-secondary);
+        @include typography(display-lg, bold);
 
-          span {
-            color: var(--color-text-dark);
-          }
-
-          // svg {
-          //   position: absolute;
-          //   right: 5px;
-
-          // }
-
+        @include desktop-small {
+          @include typography(display-sm, semibold);
         }
       }
 
+      p {
+        color: var(--color-white);
+        @include typography(text-xl, bold);
+        max-width: 88%;
+
+        @include desktop-small {
+          max-width: 100%;
+          @include typography(text-lg, bold);
+        }
+
+      }
+
+      .footer-top-btn {
+        margin-top: 16px;
+        align-self: flex-start;
+        display: flex;
+        align-items: center;
+        padding: 12px 24px;
+        @include typography(text-lg, bold);
+
+        @include desktop-small {
+          // align-self: center;
+          @include typography(text-md, medium);
+        }
+
+        background: var(--color-white);
+        position: relative;
+        color: var(--color-text-dark);
+
+        span {
+          color: var(--color-text-dark);
+        }
+
+        // svg {
+        //   position: absolute;
+        //   right: 5px;
+
+        // }
+
+      }
     }
 
-  }
+  }  
 }
