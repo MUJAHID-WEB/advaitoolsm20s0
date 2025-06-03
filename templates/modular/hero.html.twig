@@ -14,7 +14,18 @@
         <div class="container hero-container {{ module.classes }}">
             <div class="hero-text {{ module.classes == 'text_image_center' ? 'hero_text_center' : 'hero_text_left' }}">
 
-                  <h4 class="">{{ module.subtitle.translatable }}</h4>
+                  <h4 class="subtitle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <g opacity="0.8">
+                        <path d="M3 13C7.5 13 12 8.5 12 4C12 8.5 16.5 13 21 13C16.5 13 12 17.5 12 22C12 17.5 7.5 13 3 13Z" stroke="#FBFBFB" stroke-width="1.5" stroke-linejoin="round"/>
+                        <path d="M2 20.5C2.83333 20.5 4.5 18.8333 4.5 18C4.5 18.8333 6.16667 20.5 7 20.5C6.16667 20.5 4.5 22.1667 4.5 23C4.5 22.1667 2.83333 20.5 2 20.5Z" stroke="#FBFBFB" stroke-width="1.5" stroke-linejoin="round"/>
+                        <path d="M16 6C17 6 19 4 19 3C19 4 21 6 22 6C21 6 19 8 19 9C19 8 17 6 16 6Z" stroke="#FBFBFB" stroke-width="1.5" stroke-linejoin="round"/>
+                    </g>
+                    </svg>
+                  
+                  {{ module.subtitle.translatable }}
+                  
+                  </h4>
 
                 <h1 class="hero-title">
                     {{ module.h1.translatable|striptags('<span>')|raw }}
@@ -42,7 +53,7 @@
 
             {% if image != '' %}
                 <div class="hero-image flex-on-lg show-in-desktop"><img class="" src="{{ image.url }}" alt="icon"/></div>
-                <div class="hero-image flex-on-lg show-in-mobile"><img class="" src="{{ url('theme://images/hero/Hero_content_sm.webp') }}" alt="icon"/></div>
+                <div class="hero-image flex-on-lg show-in-mobile"><img class="" src="{{ url('theme://images/hero/hero-img-mobile.png') }}" alt="icon"/></div>
             {% endif %}
 
         </div>

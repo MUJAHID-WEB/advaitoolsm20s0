@@ -31,33 +31,22 @@
   align-items: center;
   gap: 0.625rem;
   align-self: stretch;
-  background-size: 100% 100%;
+  background-size: cover;
   background-color: var(--hero-bg-container);
-
-  @include mobile {
-    display: block;
-  }
-
+  background-repeat: no-repeat;
+  background-position: top left;
+  
   @include desktop-small {
     height: auto;
     padding: 118px 0 50px;
+    background-image: url(../../images/hero/hero-bg-mobile.png);
   }
 
-  h1 {
-    max-width: 100%;
-
-    @include desktop-small {
-      text-align: center;
-      @include typography(display-lg, bold);
-    }
-
-    @include typography(display-2xl, bold);
-    color: var(--hero-title);
-
-    span {
-      color: var(--hero-highlight) !important;
-    }
+  @include mobile {
+    display: block;
+    
   }
+
 
   &.medium {
     height: 33.4375rem;
@@ -66,13 +55,6 @@
       height: auto;
     }
   }
-
-  // .text_image_center {
-  //   flex-direction: column;
-  //   // gap: 2rem !important;
-  //   flex-basis: 70%;
-  //   text-align: center;
-  // }
 
   .text_right__image_left {
     flex-direction: row-reverse;
@@ -91,7 +73,7 @@
       flex-direction: column;
       align-items: flex-start;
       @include padding(padding-sm);
-      gap: 100px;
+      gap: 30px;
     }
 
     .hero_text_left {
@@ -108,9 +90,8 @@
       margin: 0 auto;
 
       position: relative;
-      // opacity: 0;
       animation: heroSlideDown 2s ease-out 0.3s forwards;
-      // flex: 1 0 60%;
+
 
       @include desktop-small {
         text-align: center;
@@ -124,12 +105,13 @@
       }
 
       p {
-        @include typography(text-xl, regular);
+        @include typography(text-lg, regular);
         max-width: 662px;
         text-align: center;
+        opacity: 0.8;
 
         @include desktop-small {
-          @include typography(text-lg, regular);
+          @include typography(text-md, regular);
           order: 3;
         }
 
@@ -148,42 +130,72 @@
         }
       }
 
+      .subtitle {
+        border-radius: 100px;
+        border: 1px solid var(--color-gray);
+        background: var(--color-secondary, #141414);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 0px 6px 0px #3D3D3D inset, 0px 6px 24px 0px #3D3D3D inset;
+        border-radius: 100px;
+        padding: 16px 24px;
+
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        color: var(--color-white);
+        opacity: 0.8;
+      }
+
       .hero-title {
-        @include typography(display-2xl, semibold);
-        max-width: 700px;
+        @include typography(display-xl, semibold);
         text-align: center;
         font-family: var(--secondary-font);
+        color: var(--hero-title);
 
         @include desktop-small {
           order: 1;
+          @include typography(display-md, semibold);
         }
 
         @include mobile {
           font-style: normal;
-          @include typography(display-lg, semibold);
-          /* 57.6px */
+          @include typography(display-md, semibold);
         }
 
-        color: var(--hero-title);
+        .line-break {
+          display: block;
+          font-family: var(--secondary-font);
+          @include typography(display-xl, semibold);
+
+          @include desktop-small {
+            @include typography(display-md, semibold);
+            font-family: var(--secondary-font);
+          }
+
+          @include mobile {
+            @include typography(display-md, semibold);
+            font-family: var(--secondary-font);
+            display: inline;
+          }
+        }
+        
       }
 
       .button {
         display: flex;
         align-items: center;
-        @include typography(text-lg, semibold);
-        border-radius: 8px;
+        @include typography(text-lg, bold);
+        border-radius: 12px;
         gap: 12px;
         margin-top: 16px;
 
-        padding: 16px 28px;
+        padding: 15.969px 57.376px 16.031px 55.624px;
         background: var(--color-primary);
-        color: var(--color-black);
+        color: var(--color-white);
+        border: 2px solid var(--color-tertiary, #FBA93F);
 
         @include desktop-small {
           order: 3;
         }
-
-
 
         svg {
           g {
