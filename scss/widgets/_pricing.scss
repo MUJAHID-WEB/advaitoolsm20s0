@@ -203,6 +203,7 @@
         padding: 20px 20px 20px 76px;
         border: 1px solid #424242;
         background: var(--color-secondary);
+        gap: 1rem;
 
         @include desktop-small{
           padding: 24px;
@@ -424,15 +425,48 @@
           gap: 1.5rem;
           padding: 30px 30px 0;
           align-self: stretch;
-          height: 100% !important;
+          height: 300px !important;
           width: 60%;
-          // border-radius: 24px 24px 0 0;
-
-          // background-color: var(--color-secondary);
+          overflow-x: auto;
 
           @include desktop-small {
             width: 100%;
             padding: 0px;
+          }
+
+          /* 1. The entire scrollbar */
+          &::-webkit-scrollbar {
+            width: 2px; /* Width of vertical scrollbar */
+            height: 5px; /* Height of horizontal scrollbar */
+          }
+
+          /* 2. The scrollbar track (the background area) */
+          &::-webkit-scrollbar-track {
+            background-color: var(--color-black); /* Light gray track */
+            border-radius: 6px; /* Rounded corners for the track */
+          }
+
+          /* 3. The scrollbar thumb (the draggable part) */
+          &::-webkit-scrollbar-thumb {
+            background-color: var(--color-black); /* Darker gray thumb */
+            border-radius: 6px; /* Rounded corners for the thumb */
+            border: 3px solid #f1f1f1; /* Optional: Creates a small "border" of track around the thumb */
+            background-clip: content-box; /* Makes the border part of the padding, not part of the thumb itself */
+          }
+
+          /* 4. Hover effect on the thumb */
+          &::-webkit-scrollbar-thumb:hover {
+            background-color: #555; /* Darker thumb on hover */
+          }
+
+          /* 5. The scrollbar corner (where vertical and horizontal scrollbars meet) */
+          &::-webkit-scrollbar-corner {
+            background-color: transparent; /* Or set a color if needed */
+          }
+
+          /* 6. The resizer (if applicable, for resizable elements) */
+          &::-webkit-resizer {
+            background-color: #666;
           }
 
           .benefit {

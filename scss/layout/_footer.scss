@@ -7,6 +7,7 @@
   flex-direction: column;
   gap: 80px;
   align-self: stretch;
+
   .menu  {
     display: none;
   }
@@ -69,10 +70,10 @@
     a {
       color: var(--color-white);
       text-decoration: none;
-      @include typography(text-lg, regular);
+      @include typography(text-lg, bold);
 
       @include desktop-small {
-        @include typography(text-md, regular);
+        @include typography(text-lg, bold);
       }
 
       &:hover {
@@ -84,15 +85,12 @@
     .footer-logo-top {
       display: flex;
       justify-content: space-between;
-      // align-self: stretch;
-      max-width: 1216px;
       margin: 0 auto;
-      gap: 186px;
+      gap: 2rem;
 
       @include desktop-small {
         flex-direction: column;
         align-items: start;
-        gap: 40px;
       }
 
 
@@ -154,19 +152,10 @@
               justify-content: left;
               gap: 2rem;
               margin-top: 27px;
-            }
-
-            img {
-              width: 60px;
-            }
+            }            
           }
         }
-
-
-
       }
-
-
 
       .logo {
         max-width: 283px;
@@ -174,23 +163,18 @@
       }
 
       .footer-logo-area {
-        // flex-basis: 42%;
         display: flex;
         flex-direction: column;
         justify-content: start;
         align-self: stretch;
-        gap: 60px;
-
-        @include desktop-small {
-          gap: 32px;
-        }
 
         .branding-text {
           @include typography(text-lg, regular);
-          margin-top: -14px;
+          margin: 26px 0 30px 0;
 
           @include desktop-small {
-            @include typography(text-md, regular);
+            @include typography(text-lg, regular);
+            margin: 24px 0;
           }
         }
 
@@ -246,7 +230,7 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        flex: 50%;
+        width: 41%;
         gap: 10px;
 
         .menu-item {
@@ -262,13 +246,7 @@
           }
 
           color: var(--color-white);
-
-
-          // &:nth-child(4),
-          // &:nth-child(5),
-          // &:nth-child(6) {
-          //   display: none
-          // }
+        
         }
       }
     }
@@ -285,7 +263,9 @@
       }
 
       img {
-        width: 60px;
+        width: 71px;
+        height: 50px;
+        border-radius: 4px;
       }
     }
   }
@@ -376,6 +356,11 @@
   }
 }
 
+.copyright-desktop-view {
+    @include desktop-small {
+      display: none;
+    }
+  }
 
 
 .footer_top {
