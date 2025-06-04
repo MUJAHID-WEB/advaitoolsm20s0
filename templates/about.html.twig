@@ -1,0 +1,10 @@
+{% set body_classes = "page-about"%}
+{% extends 'partials/base.html.twig' %}
+
+{% block article %}
+
+	{% for module in page.collection() %}
+		{{ module.content|raw }}
+	{% endfor %}
+
+{% endblock %}

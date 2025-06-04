@@ -68,3 +68,40 @@ form:
                     .link:
                       type: text
                       label: Button Link
+
+                header.hero.hero_slider.isEnabled:
+                  type: toggle
+                  label: Is Slider Enabled?
+                  highlight: 1
+                  default: 1
+                  options:
+                      1: 'Yes'
+                      0: 'No'
+                  validate:
+                      type: bool
+
+                header.hero.hero_sliders:
+                  type: list
+                  label: Hero Sliders
+                  fields:
+
+                    .count.translatable:
+                      type: text
+                      label: Count
+                      classes: 'translatable'
+
+                    .title.translatable:
+                      type: text
+                      label: Title
+                      classes: 'translatable'
+
+                    .brief.translatable:
+                      type: text
+                      label: Brief
+
+                    .img:
+                      type: pagemediaselect
+                      label: image
+                      preview_images: true
+
+                      
