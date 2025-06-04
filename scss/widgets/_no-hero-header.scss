@@ -1,63 +1,20 @@
-.page-about .no-hero-section {
-  padding: 158px 0 105px;
-  min-height: 800px;
-
-  @include desktop-small {
-    padding: 140px 0 80px;
-    min-height: unset;
-  }
-
-  .no-hero-wrapper {
-    gap: 80px;
-
-    @include desktop-small {
-      flex-direction: column;
-      gap: 42px;
-    }
-
-    .head-content {
-      // align-items: start;
-
-      h1 {
-        color: var(--color-text-dark);
-      }
-
-      .desc_btm {
-        p {
-        color: var(--color-primary);
-        }
-      }
-    }
-  }
-}
-
-
-
-
-
 .no-hero-section {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 184px 0 139px;
-  background: var(--color-primary);
-  background-image: url(../../images/no_hero_bg.webp);
+  padding: 12rem 0 6rem 0;
+  
+  background-image: url(../../images/hero/hero-bg.png);
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% 100%;
-  position: relative;
-  min-height: 705px;
-
+  background-position: top left;
+  background-size: 100%;
 
   @include desktop-small {
-    align-items: self-start;
-    // margin-top: 0;
-    padding: 140px 0 132px 0;
+    padding: 12rem 0 6rem 0;
   }
 
   @include tablet {
-    background-image: url(../../images/hero_bg_mobile.png) !important;
-    min-height: 712px;
+    background-image: url(../../images/hero/hero-bg-mobile.png) !important;
   }
 
   .no-hero-wrapper {
@@ -72,48 +29,27 @@
       text-align: center;
     }
 
-
     .head-content {
       display: flex;
       flex: 1;
       align-items: center;
       flex-direction: column;
-      gap: 32px;
-      width: 100%;
-      max-width: 661px;
+      gap: 20px;
 
       @include desktop-small {
-        width: 100%;
-        max-width: 100%;
         gap: 34px;
-        align-items: flex-start;
+        align-items: center;
+        justify-content: center;
       }
 
       h1 {
-        @include typography(display-xl, bold);
-        // max-width: 694px;
+        @include typography(display-xl, semibold);
+        color: var(--color-white);
 
         @include tablet {
           font-style: normal;
-          @include typography(display-lg, bold);
-        }
-
-        -webkit-text-fill-color: unset;
-
-        color: var(--color-primary);
-
-        span {
-          @include typography(display-xl, bold);
-          // max-width: 694px;
-
-          @include tablet {
-            font-style: normal;
-            @include typography(display-lg, bold);
-          }
-
-          -webkit-text-fill-color: unset;
-          color: var(--color-primary);
-        }
+          @include typography(display-md, semibold);
+        }     
       }
 
       h4 {
@@ -128,65 +64,10 @@
         }
       }
 
-
-      // .no-hero-breadcrumb {
-      //   // display: flex;
-      //   margin-top: 1rem;
-      //   width: 100%;
-      //   text-align: center;
-      //   // display: none;
-
-      //   ol {
-      //     display: flex;
-      //     justify-content: center;
-      //     align-items: center;
-      //     flex-wrap: wrap;
-      //     padding: 0 0;
-      //     //margin-bottom: 1rem;
-      //     list-style: none;
-      //     border-radius: 0;
-      //     color: var(--color-white);
-
-      //     .breadcrumb-item {
-      //       display: flex;
-      //       align-items: center;
-      //       @include typography(text-lg, regular);
-      //       @include desktop-small {
-      //         @include typography(text-md, regular);
-      //       }
-      //       color: var(--color-white) ;
-
-      //       a {
-      //         text-decoration: none;
-      //         color: var(--color-white) ;
-      //         @include typography(text-lg, regular);
-      //         @include desktop-small {
-      //           @include typography(text-md, regular);
-      //         }
-      //       }
-
-      //       &+.breadcrumb-item::before {
-      //         float: none;
-      //         padding-right: 0.25rem;
-      //         content: "";
-      //       }
-
-      //       &.arry svg {
-      //         display: inline-block;
-      //         @include typography(text-lg);
-
-      //         @include desktop-small {
-      //           @include typography(text-md, regular);
-      //         }
-      //       }
-      //     }
-      //   }
-      // }
-
       p {
         @include typography('text-lg', regular);
-        color: var(--color-text-light);
-        max-width: 95%;
+        color: var(--bg-secondary);
+        max-width: 50%;
 
         @include tablet {
           @include typography('text-lg', regular);
@@ -194,73 +75,22 @@
         }
       }
 
-      .desc_btm {
-        p {
-          @include typography('text-lg', bold);
-          color: var(--color-text-light);
-          max-width: 100%;
-
-          @include tablet {
-            @include typography('text-lg', bold);
-            max-width: 100%;
-            margin-top: -20px;
-          }
-        }
-      }
-
-      // .nohero-btn {
-      //   // color: var(--color-white);
-      //   // text-decoration: none;
-      //   // display: flex;
-      //   // align-items: center;
-      //   // justify-content: space-between;
-      //   // background: var(--color-primary);
-      //   // padding: 12px 20px;
-      //   // border-radius: 8px;
-      //   // gap: 5px;
-
-      //   text-decoration: none;
-      //   display: flex;
-      //   align-items: center;
-      //   gap: 6px;
-
-      //   span{
-      //     @include typography('text-md', 'extra_bold');
-      //     color: var(--color-text-dark);
-      //     background: var(--color-primary);
-      //     padding: 12px 22px;
-      //     border-radius: 22px;
-
-      //     @include desktop-small{
-      //       @include typography('text-sm', 'extra_bold');
-      //     }
-      //   }
-      // }
-
       .nohero_buttons {
         margin-top: 18px;
         display: flex;
         gap: 14px;
-        justify-content: flex-start;
 
         @include desktop-small {
           gap: 14px;
           flex-direction: column;
-          width: 100%;
           margin-top: 0;
         }
 
         .button {
-
-          align-self: flex-start;
+          padding: 15.969px 31.376px 16.031px 29.624px;
+          width: fit-content;
           display: flex;
           gap: 12px;
-
-          // svg {
-          //   path {
-          //     stroke: var(--color-white);
-          //   }
-          // }
 
           &:nth-child(2) {
             background: var(--color-secondary);
@@ -269,44 +99,6 @@
         }
 
       }
-
-
-
     }
-
-    .image-contents {
-      width: 100%;
-
-      z-index: 1;
-      display: flex;
-      flex: 1;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      gap: 27px;
-
-      @include desktop-small {
-        flex-direction: column;
-        gap: 20px;
-      }
-
-
-      .no-hero-img {
-        width: 100%;
-        // position: absolute;
-        // bottom: 0;
-        // right: 0;
-
-        @include desktop-small {
-          width: 100%;
-          position: unset;
-        }
-
-      }
-
-
-    }
-
-
   }
 }

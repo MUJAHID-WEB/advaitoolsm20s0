@@ -7,61 +7,23 @@
 
 			<div class="head-content">
 
-				{% if  noHeroContent.subtitle != null %}
-
-					<h4>{{ noHeroContent.subtitle.translatable|raw }}</h4>
-	
-				{% endif %}
-
 				{% if  noHeroContent.title != null %}
-
 					<h1>{{ noHeroContent.title.translatable|raw }}</h1>
 				{% else %}
 					<h1>{{ page.header.title|raw }}</h1>
-
-
-					{# <nav class="d-inline-block no-hero-breadcrumb" aria-label="breadcrumb">
-						<ol class="breadcrumb">
-							{% for index, link in links %}
-								{% set last = index + 1 == links|length %}
-								<li class="breadcrumb-item {{breadcrumb_text_color}} {{ last ? 'active' : '' }}">
-									{% if link.url %}
-										<a href="{{ link.url }}" class="{{breadcrumb_text_color}}">{{ link.title }}</a>
-									{% else %}
-										{{ link.title }}
-									{% endif %}
-								</li>
-
-								{% if index + 1 != links|length %}
-									<li class="breadcrumb-item arry {{breadcrumb_text_color}}">
-										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewbox="0 0 16 16">
-											<path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
-										</svg>
-									</li>
-								{% endif %}
-							{% endfor %}
-						</ol>
-					</nav> #}
 				{% endif %}
 
 				{% if  noHeroContent.description != null %}
 					<p> {{ noHeroContent.description.translatable|striptags('<br>')|raw }} </p>
-
-					{# <div class="desc_btm">{{ page.content|raw }} </div> #}
+				
 				{% endif %}
 
 				{% if noHeroContent.buttons != null %}
 					<div class="nohero_buttons">
-						{% for button in noHeroContent.buttons  %}
-					
-						<a class="button " href="{{ home_url|e }}{{ button.link }}">
-							<span>{{ button.text.translatable }}</span>
-							
-							{# <svg xmlns="http://www.w3.org/2000/svg" width="23" height="24" viewBox="0 0 23 24" fill="none">
-								<rect y="0.318359" width="23" height="23.364" rx="8" fill="#085C44"/>
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M11.6716 8.46481L14.8536 11.6468C15.0488 11.842 15.0488 12.1586 14.8536 12.3539L11.6716 15.5359C11.4763 15.7311 11.1597 15.7311 10.9645 15.5359C10.7692 15.3406 10.7692 15.024 10.9645 14.8288L13.2929 12.5003L8.5 12.5003C8.22386 12.5003 8 12.2765 8 12.0003C8 11.7242 8.22386 11.5003 8.5 11.5003L13.2929 11.5003L10.9645 9.17191C10.7692 8.97665 10.7692 8.66007 10.9645 8.46481C11.1597 8.26954 11.4763 8.26954 11.6716 8.46481Z" fill="#ECF86E"/>
-								</svg> #}
-						</a>
+						{% for button in noHeroContent.buttons  %}					
+							<a class="button " href="{{ grav.language.active ~ '/contact' }}">
+								<span>{{ button.text.translatable }}</span>					
+							</a>
 						{% endfor %}
 					</div>
 				{% endif %}
