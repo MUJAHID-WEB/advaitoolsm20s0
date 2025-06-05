@@ -4,10 +4,13 @@
 {% set data = config.data %}
 {% block render_block %}{% endblock %}
 
-<link href="{{ url('theme://assets/css/owl.carousel.min.css') }}" rel="stylesheet" />
 {% do assets.addJs('theme://assets/js/animation.js', {group: 'bottom', loading: 'defer'}) %}
+
 {% do assets.addJs('theme://assets/js/owl.carousel.min.js', {group: 'bottom', loading: 'defer'}) %}
+{% do assets.addCss('theme://assets/css/owl.carousel.min.css') %}
 {% do assets.addJs('https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js', {group: 'bottom', loading: 'defer'}) %}
+
+
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
