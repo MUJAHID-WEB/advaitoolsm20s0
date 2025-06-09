@@ -23,7 +23,7 @@ body {
   position: relative;
   // padding-top: $header-gap;
   font-family: var(--default-font);
-  background-color: var(--bg-body);
+  background-color: var(--color-secondary);
 }
 
 .bg-white {
@@ -79,6 +79,8 @@ h6 span {
   display: block;
   appearance: none;
   color: var(--color-white);
+  background: var(--color-primary);
+  border: 2px solid var(--color-tertiary, #FBA93F);
   text-decoration: none;
   cursor: pointer;
   transition: all 0.3s ease-in-out;

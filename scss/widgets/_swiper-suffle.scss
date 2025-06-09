@@ -9,7 +9,7 @@
     background-image: url(../../images/why-choose-bg.png);
     background-position: left bottom;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
   
     @include desktop-small {
       background-image: url(../../images/why-choose-bg-mobile.png);
@@ -73,22 +73,11 @@
             }            
           }
   
-          span{
-            img {
-                position: absolute;
-                bottom: 5%;
-                right: -56px;
-    
-                @include desktop-small{
-                    bottom: -33%;
-                    right: 42%;
-                    width: 100px;
-                }
-            }  
-          }
 
-          swiper-container {
+
+          .swiper-card {
             width: 550px;
+            position: relative;
 
             @include desktop-small {
               width: 550px;
@@ -98,7 +87,12 @@
               width: 250px;
             }
 
-            swiper-slide {
+            .swiper-wrapper{
+              display: flex;
+              transform: translateX(0px) !important;
+            }
+
+            .swiper-slide {
               display: flex;
               align-items: center;
               justify-content: center;
@@ -106,10 +100,27 @@
               font-size: 22px;
               font-weight: bold;
               color: #fff;
-              width: 100%;              
+              width: 84% !important;     
+              flex-shrink: 0;  
+              transition: transform 0.3s ease;   
+              
+              
+              // &:nth-of-type(1){
+              //   display: none;
+              // }
 
-              img {
-                position: relative;
+              // &:nth-of-type(2){
+              //   transform: translate3d(calc(6.75% + 0px), 0px, -143px) rotateZ(0deg) scale(1) !important;
+              // }
+
+              // &:nth-of-type(3){
+              //   transform: translate3d(calc(10.4272% - 462px), 0px, -152px) rotateZ(6.04deg) scale(1) !important;
+              // }
+
+              .slider-img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
               }
 
               .swiper-overlay {
@@ -175,7 +186,7 @@
   
         .offer-content{
           display: flex;
-          flex: 1.6;
+          flex: 1;
           flex-direction: column;
           text-align: left;
 

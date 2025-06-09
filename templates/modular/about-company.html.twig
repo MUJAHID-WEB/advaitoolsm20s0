@@ -23,35 +23,30 @@
 
 				<div class="contents-wrapper">					
 
-					<swiper-container class="swiper-about-company">
-						{% for section in page.header.about_sections %}
-							<swiper-slide>
-
-								<div class="head-content">
-									<span>
-										<img src="{{ page.media[section.icon].url }}" alt="Icon" />
-									</span>
-									<h5>{{ section.title.translatable }}</h5>
-								
-								</div>									
-								<p>{{ section.description.translatable }}</p>	
-							
-							</swiper-slide>
-						{% endfor %}
-
+					<div class="swiper swiper-about-company">
+						<div class="swiper-wrapper">
+							{% for section in page.header.about_sections %}
+								<div class="swiper-slide">
+									<div class="head-content">
+										<span>
+											<img src="{{ page.media[section.icon].url }}" alt="Icon" />
+										</span>
+										<h5>{{ section.title.translatable }}</h5>
+									</div>									
+									<p>{{ section.description.translatable }}</p>	
+								</div>
+							{% endfor %}
+						</div>
+			
 						<div class="navigations-custom-company">						
-
 							<div class="swiper-button-next">
-								<img src="{{ url('theme://images/arrow-right.svg') }}" />
+								<img src="{{ url('theme://images/arrow-right.png') }}" />
 							</div>
-
 							<div class="swiper-button-prev">
 								<img src="{{ url('theme://images/arrow-left.svg') }}" />
 							</div>						
-
 						</div>
-
-					</swiper-container>
+					</div>
 
 
 				</div>			
@@ -61,39 +56,27 @@
 		</div>
 	</div>
 
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-	var swiper = new Swiper(".swiper-about-company", {
-		slidesPerView: 1,
-		spaceBetween: 30,
-		autoplay: true,
-		loop: true,
-		centeredSlides: true,
-		rtl: true,
-
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},
-
-		breakpoints: {
-			// when window width is >= 320px (example mobile breakpoint)
-			320: {
-			slidesPerView: 1,
-			},
-			// when window width is >= 480px (another example mobile breakpoint)
-			480: {
-			slidesPerView: 1,
-			},
-			// when window width is >= 768px (example tablet breakpoint)
-			768: {
-			slidesPerView: 1, // Show 2 slides on tablets and larger
-			},
-			// when window width is >= 992px (example desktop breakpoint)
-			992: {
-			slidesPerView: 1, // Show 3 slides on desktops and larger
-			},
-		},
-	});
+  const swiper = new Swiper('.swiper-about-company', {
+    slidesPerView: 1,
+    spaceBetween: 40,
+    loop: true,
+    autoplay: false,
+    centeredSlides: true,
+    rtl: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      320: { slidesPerView: 1 },
+      768: { slidesPerView: 1 },
+      992: { slidesPerView: 1 },
+    },
+  });
 </script>
+
 
 {% endblock %}
